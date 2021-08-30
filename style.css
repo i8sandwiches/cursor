@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: cadetblue;
+  cursor: none; /*remove cursor*/
+}
+.container ul {
+  padding: 0;
+  display: flex;
+  z-index: 0;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container span {
+  z-index: -2;
+  border-radius: 50%;
+  position: fixed;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(37, 64, 65);
+  animation: wobbing ease-in-out 3s infinite;
+}
+.container span:nth-child(2) {
+  background-color: rgb(59, 97, 99);
+  animation-delay: 0.1s;
+}
+.container span:nth-child(3) {
+  background-color: rgb(73, 122, 124);
+  animation-delay: 0.2s;
+}
+.container span:nth-child(4) {
+  background-color: rgb(82, 138, 139);
+  animation-delay: 0.3s;
+}
+.container span:nth-child(5) {
+  background-color: cadetblue;
+  animation-delay: 0.4s;
+}
+
+@keyframes wobbing {
+  0% {
+    width: 30px;
+    height: 30px;
+  }
+  20% {
+    width: 300px;
+    height: 300px;
+  }
+  30% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+  }
+}
+
+.cursor {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 50%;
+  position: fixed;
+  display: none; /*prevent a problem that .cursor remain at first when you press "F5"*/
+  transform: translate(-50%, -50%);
+  pointer-events: none; /*when it's removed, that maekes problem when mouse in & out */
+  transition: background, transform 0.3s ease-in-out;
+  transform-origin: 100% 100%; /*that makes cursor on a center when .cursor bigger*/
+  z-index: -1;
+  backdrop-filter: grayscale; /*not working & it will be worked on 'img'*/
+}
+
+/*-------javascript-------*/
+.link-grow {
+  transform: scale(2);
+}
+
+.hovered-link {
+  color: cadetblue; /*dramatic action when 'color' get along with body's 'background-color'*/
+}
+/*-------------------------*/
