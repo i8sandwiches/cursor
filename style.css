@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
@@ -10,7 +16,6 @@ body {
   cursor: none; /*remove cursor*/
 }
 .container ul {
-  padding: 0;
   display: flex;
   z-index: 0;
   text-align: center;
@@ -79,17 +84,21 @@ body {
   transform: translate(-50%, -50%);
   pointer-events: none; /*when it's removed, that maekes problem when mouse in & out */
   transition: background, transform 0.3s ease-in-out;
-  transform-origin: 100% 100%; /*that makes cursor on a center when .cursor bigger*/
+  transform-origin: 100% 100%; /*it makes 'mouse cursor' center on a circle*/
   z-index: -1;
-  backdrop-filter: grayscale; /*not working & it will be worked on 'img'*/
+  display: none;
 }
 
 /*-------javascript-------*/
-.link-grow {
+.grow-cursor {
   transform: scale(2);
 }
 
-.hovered-link {
+.small-cursor {
+  transform: scale(0.5);
+}
+
+.hovered-cursor {
   color: cadetblue; /*dramatic action when 'color' get along with body's 'background-color'*/
 }
 /*-------------------------*/
