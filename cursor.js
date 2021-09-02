@@ -8,15 +8,14 @@ const HOVERED_CURSOR = "hovered-cursor";
 
 window.addEventListener("mousemove", cursor);
 window.addEventListener("mouseover", activeCursor);
-window.addEventListener("mouseleave", nonActiveCursor);
-beBigCursor.addEventListener("mouseleave",nonActiveCursor);
 
 
 function cursor(e) {
     mosueCursor.style.left = e.pageX + "px";
     mosueCursor.style.top = e.pageY + "px";
-    mosueCursor.style.display = "block"
+    mosueCursor.style.display = "block";
 }
+
 function activeCursor(e) {
     const item = e.target;
     if(item.classList.contains(BE_BIG_CURSOR)){
@@ -24,10 +23,8 @@ function activeCursor(e) {
         item.classList.add(HOVERED_CURSOR);
     } else {
         mosueCursor.classList.remove(GROW_CURSOR);
+        beBigCursor.classList.remove(HOVERED_CURSOR);
     }    
-}
-function nonActiveCursor() {
-    beBigCursor.classList.remove(HOVERED_CURSOR);
 }
 
 //__model_2__//////////////////////////////////////////////////////
