@@ -1,5 +1,5 @@
 //__model_1__//////////////////////////////////////////////////////
-//only works on "FIRST TAG WHICH HAVE CLASS:be__big-cursor"
+//o nly works on "FIRST TAG WHICH HAVE CLASS:be__big-cursor"
 const mosueCursor = document.querySelector(".cursor");
 const beBigCursor = document.querySelector(".be__big-cursor");
 
@@ -13,6 +13,8 @@ window.addEventListener("mouseover", activeCursor);
 
 
 function cursor(e) {
+    
+
     mosueCursor.style.left = e.pageX + "px";
     mosueCursor.style.top = e.pageY + "px";
     mosueCursor.style.display = "block";
